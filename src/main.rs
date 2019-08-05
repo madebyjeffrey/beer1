@@ -8,8 +8,6 @@ use ingredients::{Ingredients, lookup_malt, by_id};
 use session::Session;
 use recipe::{Recipe, FermentableDerived};
 use json::from_json;
-use Result::{Err, Ok};
-
 
 fn main() {
     let session = run("session.json");
