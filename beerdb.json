@@ -1,0 +1,58 @@
+{
+  "grain": [
+    {
+      "name": "CHÂTEAU PILSEN 2RS",
+      "uuid": "b207ac5b-100d-446f-a5be-508a9e3b33d6",
+      "manufacturer": "Castle Malting",
+      "moisture": 4.5,
+      "cgai": 74.5,
+      "extract": 81,
+      "fgdiff": 2,
+      "color": 1.9,
+      "protein": 11.5,
+      "source": "https://www.castlemalting.com/CastleMaltingMaltSpecification.asp?Command=QualityParameters2&SpecificationID=196&CropYear=2018&Language=English"
+    },
+    {
+      "name": "CHÂTEAU SPECIAL Belgium",
+      "uuid": "02266948-909b-4986-bc83-3b986dde1f76",
+      "manufacturer": "Castle Malting",
+      "moisture": 6.0,
+      "extract": 77,
+      "cgai": 69,
+      "color": 110,
+      "maxamt": 10,
+      "source": "https://www.castlemalting.com/CastleMaltingMaltSpecification.asp?Command=QualityParameters2&SpecificationID=183&CropYear=2018&Language=English"
+    },
+    {
+      "name": "Wheat Malt",
+      "uuid": "94be611e-5521-46c7-bffb-4d72c319cb8d",
+      "manufacturer": "Briess",
+      "moisture": 5.0,
+      "extract": 83,
+      "fgdiff": 1.5,
+      "cgai": 76.5,
+      "color": 2.8,
+      "maxamt": 100,
+      "source": "http://brewingwithbriess.com/Assets/PDFs/Briess_TypicalAnalysis_Malts.pdf"
+    },
+    {
+      "name": "Red Wheat Flakes",
+      "uuid": "41c77849-b520-4b82-865c-b7ef3acf3efc",
+      "manufacturer": "Briess",
+      "moisture": 7.0,
+      "extract": 75,
+      "cgai": 66.5,
+      "color": 2.0,
+      "source": "http://brewingwithbriess.com/Assets/PDFs/Briess_TypicalAnalysis_ExtractsAdjuncts.pdf"
+    },
+    {
+      "name": "Rice Hulls",
+      "uuid": "ef89ce94-cfe7-47d4-b00b-5efdb287c37a",
+      "manufacturer": "Acme Brewing Company",
+      "moisture": 0.0,
+      "cgai": 100,
+      "color": 0,
+      "source": "because fuck you"
+    }
+  ]
+}
