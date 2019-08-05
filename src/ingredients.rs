@@ -21,17 +21,13 @@ pub fn by_id(id: Uuid) -> impl Fn(&Malt) -> bool {
     move |malt| malt.uuid == id 
 }
 
-pub fn lookup_malt<F: Fn(&Malt) -> bool>(grain: &Vec<Malt>, pred: F) -> Vec<Malt> {
-    let mut collection = Vec::new();
-
-    for malt in grain.iter() {
-        if (pred(malt)) {
-            collection.push(malt.clone());
-        }
-    }
-
-    collection
+pub fn lookup_malt(grain: &[Malt], pred: impl Fn(&Malt) -> bool)
+    -> impl Iterator<Item = &Malt>
+{
+    grain.iter()
+        .filter(move |m| pred(m))
 }
+
 // impl Ingredients {
 //     pub fn load(source: &str) -> Result<Ingredients, FileErrors> {
 //         from_json::<IngredientsDB>(source).map(|db| Ingredients { db })        
