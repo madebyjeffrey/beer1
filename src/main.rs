@@ -3,11 +3,13 @@ mod session;
 mod recipe;
 mod errors;
 mod json;
+mod utility;
 
 use ingredients::{Ingredients, lookup_malt, by_id};
 use session::Session;
 use recipe::{Recipe, FermentableDerived};
 use json::from_json;
+use utility::{single};
 
 fn main() {
     let session = run("session.json");
@@ -32,8 +34,7 @@ fn run(session: &str) -> Result<String, String> {
     let needed = recipe.fermentables
         .iter()
         .flat_map(|fermentable| {
-            let first_option = lookup_malt(&ingredients.grain, by_id(fermentable.id))
-                .next()?;
+            let first_option = single(&mut lookup_malt(&ingredients.grain, by_id(fermentable.id)))?;                
 
             Some(FermentableDerived {
                 name: first_option.name.clone(),
