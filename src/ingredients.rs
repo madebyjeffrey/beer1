@@ -18,7 +18,7 @@ pub struct Ingredients {
 }
 
 pub fn by_id(id: Uuid) -> impl Fn(&Malt) -> bool {
-    move |malt| malt.uuid == id 
+    move |malt| malt.uuid == id
 }
 
 pub fn lookup_malt(grain: &[Malt], pred: impl Fn(&Malt) -> bool)
@@ -30,7 +30,7 @@ pub fn lookup_malt(grain: &[Malt], pred: impl Fn(&Malt) -> bool)
 
 // impl Ingredients {
 //     pub fn load(source: &str) -> Result<Ingredients, FileErrors> {
-//         from_json::<IngredientsDB>(source).map(|db| Ingredients { db })        
+//         from_json::<IngredientsDB>(source).map(|db| Ingredients { db })
 //     }
 
 //     pub fn malts<U>(&self, pred: fn(&Malt) -> bool) -> Vec<Malt> {

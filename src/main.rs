@@ -22,7 +22,7 @@ fn main() {
 fn run(session: &str) -> Result<String, String> {
     let session: Session = from_json(session)
         .map_err(|why| format!("Unable to load brewing session: {}", why))?;
-    
+
     let recipe: Recipe = from_json(&session.recipe)
         .map_err(|why| format!("Unable to load recipe. {}", why))?;
 
