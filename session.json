@@ -2,5 +2,6 @@
   "fermenterOutput": 23,
   "bhefficient": 72,
   "target": 1.052,
+  "maltTemp": 20,
   "recipe": "recipe.json"
 }

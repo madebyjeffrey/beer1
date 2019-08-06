@@ -34,7 +34,7 @@ fn run(session: &str) -> Result<String, String> {
     let required_ingredients = recipe.fermentables
         .iter()
         .flat_map(|fermentable| {
-            let first_option = single(&mut lookup_malt(&ingredients.grain, by_id(fermentable.id)))?;                
+            let first_option = single(lookup_malt(&ingredients.grain, by_id(fermentable.id)))?;                
 
             Some(FermentableDerived {
                 name: first_option.name.clone(),
@@ -60,12 +60,29 @@ fn run(session: &str) -> Result<String, String> {
     println!();
     println!("Ingredients");
     println!("{:=<60}", "");
-
-    for ingredient in required_ingredients {
+    
+    for ingredient in required_ingredients.iter() {
         let amt = gross_extract * (ingredient.amount / 100.0) / (ingredient.cgai / 100.0);
 
         println!("{:30} {:20.2} kg", &ingredient.name, amt);
     }
+
+    println!("");
+    println!("Supplemental Information");
+
+    let color = required_ingredients
+        .iter()
+        .map(|ingredient| (ingredient.amount / 100.0) * (ingredient.color) * (sg_to_plato(session.target) / 8.0))
+        .fold(0.0, |sum, color| sum + color);
+
+    println!("Color of wort: {:.1} SRM", color);
+    println!("Color of beer: {:.1} SRM", color * 0.7);
+
+    let strike = (0.4 * (recipe.mash_temp - session.malt_temp)) / recipe.liquor_to_grist + recipe.mash_temp;
+    println!("Target Mash Temp: {:.1}\u{00B0}C", recipe.mash_temp);
+    println!("Malt Temp: {:.1}\u{00B0}C", session.malt_temp);
+    println!("Strike Temp: {:.1}\u{00B0}C", strike);
+
 
     println!("");
 

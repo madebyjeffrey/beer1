@@ -1,7 +1,7 @@
 use std::option::Option::{Some, None};
 use num::pow;
 
-pub fn single<T, I>(iterator: &mut I) -> Option<T>
+pub fn single<T, I>(mut iterator: I) -> Option<T>
     where I : Iterator<Item = T> {
         let once = iterator.next();
         let twice = iterator.next();
@@ -13,5 +13,5 @@ pub fn single<T, I>(iterator: &mut I) -> Option<T>
     }
 
 pub fn sg_to_plato(sg: f64) -> f64 {
-     (-1.0 * 616.868) + (1111.14 * sg) - (630.272 * pow(sg, 2)) + (135.997 * pow(sg, 3))
+    (-1.0 * 616.868) + (1111.14 * sg) - (630.272 * pow(sg, 2)) + (135.997 * pow(sg, 3)) 
 }

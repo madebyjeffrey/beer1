@@ -3,9 +3,12 @@ use uuid::Uuid;
 
 
 #[derive(Serialize, Deserialize, Clone)]
+#[serde(rename_all="camelCase")]
 pub struct Recipe {
     pub ingredients: String,
-    pub fermentables: Vec<Fermentable>
+    pub fermentables: Vec<Fermentable>,
+    pub liquor_to_grist: f64,
+    pub mash_temp: f64,
 }
 
 #[derive(Serialize, Deserialize, Clone)]

@@ -1,5 +1,7 @@
 {
   "ingredients": "beerdb.json",
+  "liquorToGrist": 2.2,
+  "mashTemp": 63,
   "fermentables": [
     {
       "id": "b207ac5b-100d-446f-a5be-508a9e3b33d6",

@@ -7,4 +7,5 @@ pub struct Session {
     pub bhefficient: f64,
     pub target: f64,
     pub recipe: String,
+    pub malt_temp: f64,
 }
